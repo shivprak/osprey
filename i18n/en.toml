@@ -6,6 +6,8 @@ other = "Code"
 other = "View All"
 [letsChat]
 other = "Let's Chat"
+[ahuman]
+other = "(A human will respond, not an AI!)"
 [name]
 other = "Name"
 [email]
