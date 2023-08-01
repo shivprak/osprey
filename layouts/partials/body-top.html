@@ -25,8 +25,14 @@
     <a href="{{ "#" | relLangURL }}"><img {{ if .Site.Params.lazyLoading }}data-src="{{ .Site.Params.logoSmall }}" class="lazyload" lazyload="on"{{ else }}src="{{ .Site.Params.logoSmall }}"{{ end }} alt="{{ .Site.Title }}"></a>
   </div>
     {{ range .Site.Menus.main }}
+      <!-- {{ printf "%#v" .Name }} -->
       <div class="col-xs-3 col-sm-2">
+        {{ $_name := .Name }}
+        {{ if eq $_name "Blog"}}
+        <h3><a target="_blank" href="{{ .URL }}">{{ .Name }}</a></h3>
+        {{ else }}
         <h3><a href="{{ .URL }}">{{ .Name }}</a></h3>
+        {{ end}}  
       </div>
     {{ end }}
   <div class="col-xs-6 col-sm-1 nav-toggle">
